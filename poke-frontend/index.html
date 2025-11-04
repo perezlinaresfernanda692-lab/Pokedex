@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Node.js</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+
+    <h1 class="text-4xl font-bold text-red-600 mb-6">Pokedex</h1>
+    
+    <!-- Filtros de búsqueda -->
+    <div class="w-full flex flex-col md:flex-row justify-center items-center gap-4 mt-6 mb-12">
+        <input id="nameFilter" type="text" placeholder="Buscar por nombre" class="w-full border p-2 rounded-lg">
+        <input id="idFilter" type="number" placeholder="Buscar por ID" class="w-full border p-2 rounded-lg">
+        <select id="typeFilter" class="w-full border p-2 rounded-lg">
+            <option value="">Todos los tipos</option>
+            <option value="fire">🔥 Fuego </option>
+            <option value="water">💧 Agua</option>
+            <option value="grass">🌿 Planta</option>
+            <option value="electric">⚡ Eléctrico</option>
+            <option value="psychic">🔮 Psíquico</option>
+            <option value="rock">🪨 Roca</option>
+            <option value="ground">🌍 Tierra</option>
+            <option value="bug">🐛 Bicho</option>
+            <option value="ghost">👻 Fantasma</option>
+            <option value="dragon">🐉 Dragón</option>
+        </select>
+        <button id="searchBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Buscar</button>
+        <button id="clearBtn" class="w-full bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500">Limpiar</button>
+    </div>
+
+
+    <!-- Contenedor de tarjetas -->
+    <div id="pokemon-container"
+        class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full max-w-6xl"></div>
+
+    <!-- Paginación Desktop -->
+    <div class="hidden md:flex justify-center mt-8 space-x-4">
+        <button id="first"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Inicio</button>
+        <button id="prev"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50">Anterior</button>
+        <button id="next"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50">Siguiente</button>
+        <button id="last"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Final</button>
+    </div>
+
+    <!-- Paginación Móvil -->
+    <div class="md:hidden flex justify-center mt-8 space-x-4">
+        <button id="first"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Inicio</button>
+        <button id="prev"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"><</button>
+        <button id="next"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50">></button>
+        <button id="last"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Final</button>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
