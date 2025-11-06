@@ -55,13 +55,71 @@
         <button id="first"
             class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Inicio</button>
         <button id="prev"
-            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"><</button>
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"></button>
         <button id="next"
             class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50">></button>
         <button id="last"
             class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">Final</button>
     </div>
 
+    <!-- Modal de detalle -->
+    <div id="pokemonModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+         <div class="sticky top-0 bg-gradient-to-r from-red-500 to-red-600 text-white p-6 rounded-t-2xl flex justify-between items-center">
+            <div>
+                <h2 id="modalName" class="text-3xl font-bold capitalize"></h2>
+                <p id="modalCategory" class="text-sm opacity-90"></p>
+            </div>
+            <button id="closeModal" class="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+            </button>
+         </div> 
+           <!--Contenido  -->
+           <div class="p-6">
+           <div class="flex flex-col md:flex-row gap-6 mb-6">
+            <div class="flex-1 text-center">
+                <img id="modalSprite" class="w-64 h-64 mx-auto object-contain" alt="">
+                <p id="modalId" class="text-gray-500 font-mono text-lg mt-2"></p>
+            </div>
+            <div class="flex-1">
+                <div class="mb-4">
+                    <h3 class="font-bold text-gray-700 mb-2">Tipos</h3>
+                    <div id="modalTypes" class="flex gap-2 flex-wrap"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <p class="text-xs text-gray-500">Altura</p>
+                        <p id="modalHeight" class="text-xl font-bold"></p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <p class="text-xs text-gray-500">Peso</p>
+                        <p id="modalWeight" class="text-xl font-bold"></p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-bold text-gray-700 mb-2">Habilidades</h3>
+                    <div id="modalAbilities" class="flex gap-2 flex-wrap"></div>
+                </div>
+            </div>
+           </div>
+
+           <!-- Descripción -->
+            <div class="mb-6 bg-blue-50 p-4 rounded-lg">
+                <h3 class="font-bold text-gray-700 mb-2">Descripción</h3>
+                <p id="modalDescription" class="text-gray-600 text-sm"></p>
+            </div>
+
+            
+
+            <div>
+                <h3 class="font-bold text-gray-700 mb-4">Estadísticas de Base</h3>
+                <div id="modalStats" class="space-y-3"></div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
